@@ -7,6 +7,7 @@ import session from 'koa-generic-session'
 import passport from 'koa-passport'
 import mount from 'koa-mount'
 import serve from 'koa-static'
+import cors from 'kcors'
 
 import config from '../config'
 import { errorMiddleware } from '../src/middleware'
@@ -16,6 +17,12 @@ app.keys = [config.session]
 
 mongoose.Promise = global.Promise
 mongoose.connect(config.database)
+
+
+app.use(convert(cors({
+  allowHeaders: 'Cache-Control, Pragma, Origin, Authorization, Content-Type, X-Requested-With, X-Auth-Token, X-App-Version, X-Jumper',
+  credentials: true
+})))
 
 app.use(convert(logger()))
 app.use(bodyParser())

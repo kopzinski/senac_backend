@@ -15,7 +15,7 @@ export default [
     method: 'GET',
     route: '/',
     handlers: [
-      ensureUser,
+      // ensureUser,
       user.getUsers
     ]
   },
@@ -23,7 +23,7 @@ export default [
     method: 'GET',
     route: '/:id',
     handlers: [
-      ensureUser,
+      // ensureUser,
       user.getUser
     ]
   },
@@ -31,7 +31,7 @@ export default [
     method: 'PUT',
     route: '/:id',
     handlers: [
-      ensureUser,
+      // ensureUser,
       user.getUser,
       user.updateUser
     ]
@@ -40,7 +40,7 @@ export default [
     method: 'DELETE',
     route: '/:id',
     handlers: [
-      ensureUser,
+      // ensureUser,
       user.getUser,
       user.deleteUser
     ]
